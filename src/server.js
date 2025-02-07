@@ -161,6 +161,10 @@ transporter.verify(function (error, success) {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.post("/api/contactus", async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
@@ -216,7 +220,7 @@ app.post("/api/appointment", async (req, res) => {
     ) {
       return res
         .status(400)
-        .json({ error: "Please provide all required fields" });
+        .json({ error: "Please provide all required fields " });
     }
 
     // Email options
